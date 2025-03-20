@@ -1,0 +1,61 @@
+print("Hello World!!")
+
+x <- 3
+y <- 4
+z <- x + y
+print(z)
+
+a <- 10
+b <- 20
+result <- a - b
+print(result)
+
+
+ctrl + enter : Ejecutar linea seleccionada
+ctrl + L : Limpiar pantalla de consola
+ 
+
+install.packages()
+ggplot : Histogramas, graficos de barra, dispersion, etc
+Ploty: Visualizaciones de datos basadas en red 
+Lattice: Maneja graficos sin personalizaciones
+Leaflet: Graficos interactivos
+
+
+library(datasets)
+data(iris)
+View(iris)
+unique(iris$Species)
+
+-------------------------------------------------------------------------------------------
+library(datasets)
+data(mtcars)   # Carga los datos
+head(mtcars,5) # Ver las 5 primeras filas
+
+?mtcars # Muestra informacion de las variables
+
+library(ggplot2) # Carga el paquete ggplot2
+
+# Crear un gráfico de dispersión de desplazamiento (disp) y millas por galón (mpg)
+# y agrega un titulo (ggtitle)
+ggplot(aes(x=disp,y=mpg,),data=mtcars)+geom_point()+ggtitle("displacement vs miles per gallon")
+
+# Cambia el nombre del eje X Y
+ggplot(aes(x=disp,y=mpg,),data=mtcars)+geom_point()+ggtitle("displacement vs miles per gallon") + labs(x = "Displacement", y = "Miles per Gallon")
+
+# Convierte la columna vs de mscars en un factor 
+mtcars$vs <- as.factor(mtcars$vs)
+
+# Crea un diagrama de caja de la distribución para el Motor en forma de v y recto
+ggplot(aes(x=vs, y=mpg), data = mtcars) + geom_boxplot()
+
+# Agrega colores al diagrama de caja boxlot
+ggplot(aes(x=vs, y=mpg, fill = vs), data = mtcars) + 
+  geom_boxplot(alpha=0.3) +
+  theme(legend.position="none")
+
+# Crea un hisstograma (grafico de barras) del peso (wt)
+ggplot(aes(x=wt),data=mtcars) + geom_histogram(binwidth=0.5)
+
+
+
