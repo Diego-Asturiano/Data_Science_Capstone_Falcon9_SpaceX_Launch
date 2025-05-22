@@ -1,2 +1,0 @@
-# myFirstRepository
-Repository example
